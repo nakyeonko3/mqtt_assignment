@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 from read_csv_file import get_senor_data_last_value
+import mqtt
 
 app=Flask(__name__)
 bmp_sensor_value = 0
@@ -13,5 +14,6 @@ def getBmpSensorData():
     bmp_sensor_value = float(get_senor_data_last_value())
     return jsonify({"Sensor":bmp_sensor_value})
 
-
-app.run(host="0.0.0.0", port="5050", debug=True)
+if __name__ == "__main__":
+    mqtt.mqtt_init()
+    app.run(host="0.0.0.0", port="5050", debug=True)

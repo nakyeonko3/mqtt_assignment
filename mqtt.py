@@ -18,7 +18,7 @@ def mqtt_init():
     client = mqtt.Client(client_name)
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect(host) #접속할 호스트명
+    client.connect('nakyeonkopi.local') #접속할 호스트명
     client.loop_start()
 
 

@@ -11,16 +11,22 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script>
     <!--  -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
   <body>
-    <div>
-      <span id="temperValue"></span>
-      <span>C</span>
-    </div>
-    <div>
-      <canvas id="temperChart"></canvas>
-    </div>
-    <script src="{{  url_for('static', filename='js/renderTemperValue.js')}}"></script>
+    <section>
+      <div>
+        <span id="temperValue"></span>
+        <span>C</span>
+      </div>
+      <div id="chart">
+        <canvas id="temperChart"></canvas>
+      </div>
+    </section>
+    <script src="{{  url_for('static', filename='js/renderTemperValue.js' )}}"></script>
     <script src="{{  url_for('static', filename='js/temperChart.js')}}"></script>
   </body>
 </html>
